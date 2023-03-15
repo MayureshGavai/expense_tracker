@@ -1,4 +1,4 @@
-import 'package:expence_tracker/Transaction.dart';
+import 'package:expence_tracker/models/Transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -32,6 +32,9 @@ class _HomePageState extends State<HomePage> {
         id: 't2', title: 'Groceries', amount: 2000, dateTime: DateTime.now()),
   ];
 
+  final titleInputController = TextEditingController();
+  final amountInputController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,6 +53,43 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.blue,
                   child: Text('Chart'),
                   elevation: 5,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                elevation: 5,
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: TextField(
+                        decoration: InputDecoration(labelText: 'Enter Title'),
+                        controller: titleInputController,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: TextField(
+                        decoration: InputDecoration(labelText: 'Enter Amount'),
+                        controller: amountInputController,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      child: ElevatedButton(
+                        child: Text(
+                          'Add Transaction',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onPressed: () {
+                          print(titleInputController.text);
+                          print(amountInputController.text);
+                        },
+                      ),
+                    )
+                  ],
                 ),
               ),
             ),
