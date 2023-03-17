@@ -7,6 +7,17 @@ class NewTransaction extends StatelessWidget {
 
   NewTransaction(this.addTx);
 
+  void submitData(String Data) {
+    final enteredTitle = titleInputController.text;
+    final enteredAmount = double.parse(amountInputController.text);
+
+    if (enteredTitle.isEmpty || enteredAmount <= 0) {
+      return;
+    }
+
+    addTx(enteredTitle, enteredAmount);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,6 +31,7 @@ class NewTransaction extends StatelessWidget {
               child: TextField(
                 decoration: InputDecoration(labelText: 'Enter Title'),
                 controller: titleInputController,
+                onSubmitted: (_) => submitData,
               ),
             ),
             Padding(
@@ -27,6 +39,8 @@ class NewTransaction extends StatelessWidget {
               child: TextField(
                 decoration: InputDecoration(labelText: 'Enter Amount'),
                 controller: amountInputController,
+                keyboardType: TextInputType.number,
+                onSubmitted: (_) => submitData,
               ),
             ),
             Padding(
@@ -36,9 +50,7 @@ class NewTransaction extends StatelessWidget {
                   'Add Transaction',
                   style: TextStyle(color: Colors.white),
                 ),
-                onPressed: () {
-                  addTx(titleInputController.text, double.parse(amountInputController.text));
-                },
+                onPressed: () => submitData,
               ),
             )
           ],

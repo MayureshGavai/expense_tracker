@@ -10,7 +10,7 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 500,
       child: ListView.builder(
         itemBuilder: (ctx, index) {
           return Padding(
@@ -41,7 +41,7 @@ class TransactionList extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5)),
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      '₹ ' + transactions[index].amount.toString(),
+                      '₹ ' + transactions[index].amount.toStringAsFixed(0),
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
