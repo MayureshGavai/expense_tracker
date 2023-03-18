@@ -27,42 +27,48 @@ class _NewTransactionState extends State<NewTransaction> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Card(
-        elevation: 5,
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: TextField(
-                decoration: InputDecoration(labelText: 'Enter Title'),
-                controller: titleInputController,
-                onSubmitted: (_) => submitData(),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: TextField(
-                decoration: InputDecoration(labelText: 'Enter Amount'),
-                controller: amountInputController,
-                keyboardType: TextInputType.number,
-                onSubmitted: (_) => submitData(),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10.0),
-              child: ElevatedButton(
-                child: Text(
-                  'Add Transaction',
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: submitData,
-              ),
-            )
-          ],
+    return
+        //Padding(
+        //  padding: const EdgeInsets.all(8.0),
+        //  child:
+        //  Card(
+        // elevation: 5,
+        //child:
+        Column(
+      children: <Widget>[
+        // Padding(
+        //   padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        //   child:
+        TextField(
+          decoration: InputDecoration(labelText: 'Enter Title'),
+          controller: titleInputController,
+          onSubmitted: (_) => submitData(),
         ),
-      ),
+        //  ),
+        //  Padding(
+        //    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        //    child:
+        TextField(
+          decoration: InputDecoration(labelText: 'Enter Amount'),
+          controller: amountInputController,
+          keyboardType: TextInputType.number,
+          onSubmitted: (_) => submitData(),
+        ),
+        //  ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 15.0),
+          child: ElevatedButton(
+            child: Text(
+              'Add Transaction',
+              style: TextStyle(color: Colors.white),
+            ),
+            onPressed: submitData,
+          ),
+        )
+      ],
+      //  ),
+      //  ),
     );
+    //);
   }
 }
