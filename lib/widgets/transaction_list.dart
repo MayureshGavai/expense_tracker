@@ -10,7 +10,7 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
+      height: 550,
       child: ListView.builder(
         itemBuilder: (ctx, index) {
           return Padding(
@@ -29,8 +29,11 @@ class TransactionList extends StatelessWidget {
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 18),
                         ),
-                        Text(DateFormat.yMMMd()
-                            .format(transactions[index].dateTime)),
+                        Text(
+                          DateFormat.yMMMd()
+                              .format(transactions[index].dateTime),
+                          style: TextStyle(color: Colors.grey),
+                        ),
                       ],
                     ),
                   ),
