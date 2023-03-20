@@ -69,6 +69,12 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void _deleteNewTransaction(String id) {
+    setState(() {
+      _userTransactions.removeWhere((tx) => tx.id == id);
+    });
+  }
+
   void _startAddNewTransaction(BuildContext ctx) {
     showDialog(
       context: ctx,
@@ -90,7 +96,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Flutter App'),
+        title: Text('Expense Tracker App'),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -99,7 +105,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Chart(_recentTransactions),
-            TransactionList(_userTransactions),
+            TransactionList(_userTransactions, _deleteNewTransaction),
           ],
         ),
       ),

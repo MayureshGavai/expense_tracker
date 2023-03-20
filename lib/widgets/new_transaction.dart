@@ -32,7 +32,7 @@ class _NewTransactionState extends State<NewTransaction> {
     showDatePicker(
       context: context,
       initialDate: DateTime.now(),
-      firstDate: DateTime(2019),
+      firstDate: DateTime(2023),
       lastDate: DateTime.now(),
     ).then((pickedDate) {
       if (pickedDate == null) {
@@ -85,7 +85,10 @@ class _NewTransactionState extends State<NewTransaction> {
                   _selectedDate == null
                       ? 'No Date Chosen!'
                       : 'Picked Date: ${DateFormat.yMd().format(_selectedDate)}',
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               TextButton(
@@ -99,7 +102,7 @@ class _NewTransactionState extends State<NewTransaction> {
         ),
 
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: ElevatedButton(
             child: Text(
               'Add Transaction',
