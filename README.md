@@ -1,16 +1,7 @@
 # expence_tracker
 
-A new Flutter project.
+<img src="https://user-images.githubusercontent.com/73021701/227794952-eb748844-76b7-433a-a43c-97c857fe3818.jpg" height="600">
 
-## Getting Started
+<br>
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://user-images.githubusercontent.com/73021701/227795213-5769ca06-44c9-4be1-b1d2-6d7782d2db7e.jpg" height="600"> 

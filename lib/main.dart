@@ -1,5 +1,3 @@
-import 'package:expence_tracker/widgets/chart.dart';
-
 import './widgets/new_transaction.dart';
 import './widgets/chart.dart';
 import './widgets/transaction_list.dart';
